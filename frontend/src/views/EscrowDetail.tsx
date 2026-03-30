@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getEscrow, confirmDelivery } from '../lib/stellar';
 import type { EscrowData } from '../types';
 import { StatusBadge } from '../components/StatusBadge';

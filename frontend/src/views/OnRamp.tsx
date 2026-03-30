@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { getAnchorConfig, getSep10Token, initiateDeposit, getTransactionStatus } from '../lib/sep24';
 import type { DepositStatus } from '../lib/sep24';
 

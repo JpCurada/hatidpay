@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface DisputeCenterProps {
   escrowId: string;
@@ -7,7 +7,7 @@ interface DisputeCenterProps {
 
 export function DisputeCenter({ escrowId, onBack }: DisputeCenterProps) {
   const [reason, setReason] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   const reasons = [
     { id: 'not_received', label: 'Goods Not Received' },
