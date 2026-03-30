@@ -1,4 +1,3 @@
-import React from 'react';
 
 type EscrowStatus = 'Created' | 'Funded' | 'Released' | 'Disputed' | 'Expired';
 

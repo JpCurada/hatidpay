@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface LandingProps {
   onConnect: () => Promise<void>;

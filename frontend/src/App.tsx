@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Landing } from './views/Landing';
 import { Dashboard } from './views/Dashboard';
 import { CreateEscrow } from './views/CreateEscrow';

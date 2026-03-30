@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { StatusBadge } from '../components/StatusBadge';
 import { getUsdcBalance } from '../lib/stellar';
 import { useQuery } from "convex/react";
