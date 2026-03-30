@@ -1,0 +1,224 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --background: #f5f0e8;
+  --text-main: #1a1a1a;
+  --text-muted: #4a4a4a;
+  
+  --accent-yellow: #ffcc00;
+  --accent-red: #e63b2e;
+  --accent-blue: #0055ff;
+
+  --heading-font: 'Space Grotesk', sans-serif;
+  --body-font: 'Inter', sans-serif;
+
+  --border-width: 3px;
+  --border-radius: 0px; 
+  --shadow-offset: 6px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text-main);
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f5f0e8] text-[#1a1a1a] font-['Inter',_sans-serif];
+  }
+  h1, h2, h3, h4, h5, h6, .display {
+    @apply font-['Space_Grotesk',_sans-serif] uppercase;
+  }
+}
+
+@layer components {
+  /* Neo-Brutalist Border Utility */
+  .border-neo {
+    @apply border-[4px] border-[#1a1a1a];
+  }
+  .border-neo-thin {
+    @apply border-[2px] border-[#1a1a1a];
+  }
+  
+  /* Neo-Brutalist Shadow */
+  .shadow-neo {
+    box-shadow: 4px 4px 0px 0px rgba(26,26,26,1);
+  }
+  
+  /* Interactive Buttons */
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 px-6 py-3 bg-[#ffcc00] border-neo font-['Space_Grotesk',_sans-serif] text-lg font-bold uppercase transition-transform shadow-neo hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(26,26,26,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(26,26,26,1)];
+  }
+
+  .btn-danger {
+    @apply flex items-center justify-center gap-2 px-6 py-3 bg-[#ef4444] text-white border-neo font-['Space_Grotesk',_sans-serif] text-lg font-bold uppercase transition-transform shadow-neo hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(26,26,26,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(26,26,26,1)];
+  }
+
+  .btn-secondary {
+    @apply flex items-center justify-center gap-2 px-6 py-3 bg-white border-neo font-['Space_Grotesk',_sans-serif] text-lg font-bold uppercase transition-transform shadow-neo hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(26,26,26,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(26,26,26,1)];
+  }
+
+  .card-neo {
+    @apply bg-white border-neo shadow-neo p-6;
+  }
+}
+
+/* Retro UI Components */
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Card */
+.retro-card {
+  background: var(--background);
+  border: var(--border-width) solid var(--text-main);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--text-main);
+  padding: 2.5rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  position: relative;
+}
+
+/* Button */
+.retro-btn {
+  font-family: var(--heading-font);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+  border: var(--border-width) solid var(--text-main);
+  background: var(--background);
+  color: var(--text-main);
+  cursor: pointer;
+  box-shadow: 4px 4px 0 0 var(--text-main);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.retro-btn:not(:disabled):hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 var(--text-main);
+}
+
+.retro-btn:not(:disabled):active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 var(--text-main);
+}
+
+.retro-btn.primary {
+  background: var(--accent-yellow);
+}
+
+.retro-btn.primary:not(:disabled):hover {
+  background: var(--text-main);
+  color: var(--accent-yellow);
+  box-shadow: 2px 2px 0 0 var(--accent-yellow), 4px 4px 0 0 var(--text-main);
+}
+
+.retro-btn.secondary {
+  background: var(--background);
+}
+
+.retro-btn.secondary:not(:disabled):hover {
+  background: var(--text-main);
+  color: var(--background);
+}
+
+.retro-btn.danger {
+  background: var(--accent-red);
+  color: #fff;
+}
+
+.retro-btn.danger:not(:disabled):hover {
+  background: var(--text-main);
+}
+
+.retro-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: 0 0 0 0 transparent;
+  transform: none;
+}
+
+.retro-btn.full-width {
+  width: 100%;
+}
+
+/* Input Fields */
+.retro-input {
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  border-bottom: var(--border-width) solid var(--text-main);
+  background: transparent;
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0;
+}
+
+.retro-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.retro-input:focus {
+  border-bottom-color: var(--accent-blue);
+}
+
+/* Status Indicators */
+.status-pill {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--text-main);
+  font-family: var(--heading-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.status-pill.created { background: var(--accent-yellow); }
+.status-pill.confirmed { background: var(--text-main); color: var(--background); }
+.status-pill.disputed { background: var(--accent-red); color: white; }
+
+/* Tags/Labels */
+.retro-label {
+  display: block;
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+/* Layout Utilities */
+.spacer-2 { height: 2rem; }
+.spacer-4 { height: 4rem; }
+
+/* Animations */
+.animate-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
