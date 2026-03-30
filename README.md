@@ -116,6 +116,8 @@ Created --> Confirmed (buyer calls confirm_delivery)
         --> Disputed  (either party calls raise_dispute)
 ```
 
+![alt text](images\home-page.png)
+![alt text](images\escrow-page.png)
 ---
 
 ## Prerequisites
