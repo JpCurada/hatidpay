@@ -3,9 +3,12 @@ import { signWithFreighter } from './freighter';
 const ANCHOR_ORIGIN = 'https://testanchor.stellar.org';
 const TOML_URL = `${ANCHOR_ORIGIN}/.well-known/stellar.toml`;
 
-// In dev, route anchor requests through Vite proxy to avoid CORS
+// In dev: Vite proxy at /anchor/* forwards to testanchor.stellar.org
+// In production: Vercel Edge Function at /api/anchor/* does the same
 function proxyUrl(url: string): string {
-  return url.replace(ANCHOR_ORIGIN, '/anchor');
+  const isDev = import.meta.env.DEV;
+  const prefix = isDev ? '/anchor' : '/api/anchor';
+  return url.replace(ANCHOR_ORIGIN, prefix);
 }
 
 // Minimal TOML parser for top-level string key="value" pairs
