@@ -466,6 +466,88 @@ textarea.input-neo-box {
   border: 2px solid var(--bg);
 }
 
+/* ---- Skeleton Loader ---- */
+@keyframes shimmer {
+  0% { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-container) 25%, var(--surface-dim) 50%, var(--surface-container) 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: 0;
+}
+
+/* ---- Pulse animation ---- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse {
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+/* ---- Focus States ---- */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Safe Area (notched devices) ---- */
+.page-wrapper {
+  padding-bottom: calc(var(--bottombar-height) + env(safe-area-inset-bottom));
+}
+
+#bottom-nav-bar {
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(var(--bottombar-height) + env(safe-area-inset-bottom));
+}
+
+/* ---- Toast notification ---- */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.toast {
+  position: fixed;
+  bottom: calc(var(--bottombar-height) + 1rem + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-main);
+  color: var(--accent-yellow);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.75rem 1.5rem;
+  border: 3px solid var(--text-main);
+  box-shadow: var(--shadow-neo);
+  z-index: 9999;
+  white-space: nowrap;
+  animation: toastIn 0.2s ease forwards;
+}
+
+/* ---- Countdown urgency ---- */
+.countdown-urgent {
+  color: var(--accent-red);
+  animation: pulse 1s ease-in-out infinite;
+}
+
 /* Link defaults */
 a {
   color: var(--accent-blue);
