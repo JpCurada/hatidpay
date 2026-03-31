@@ -98,6 +98,9 @@ CCCNLLVKINNZLO6LLXVG23GHN6ZHVBUEEDPDMO3WATQUTIFA7HTSK2ER
 
 Explorer: https://stellar.expert/explorer/testnet/contract/CCCNLLVKINNZLO6LLXVG23GHN6ZHVBUEEDPDMO3WATQUTIFA7HTSK2ER?filter=interface
 
+<img width="1918" height="1032" alt="image" src="https://github.com/user-attachments/assets/bfcbb1ce-a85b-4a32-9033-550c15f56a7b" />
+
+
 ### Contract Functions
 
 | Function | Caller | Description |
